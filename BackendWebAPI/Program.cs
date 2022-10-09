@@ -25,11 +25,6 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=PremiumCalculator}/{action=CalculatePremium}/{occupation=Doctor}");
-});
+app.MapControllers();
 
 app.Run();
