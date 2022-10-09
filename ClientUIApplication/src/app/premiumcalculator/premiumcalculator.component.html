@@ -1,0 +1,42 @@
+<div class="container">
+    <div>
+      <h1>Premium Calculator</h1>
+      <form ngNativeValidate class="myForm" #premiumForm="ngForm" (ngSubmit)="onSubmit(premiumForm.value)" >
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" ngModel class="form-control" id="name" required name="name">
+        </div>
+  
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" ngModel min="1" class="form-control" id="age" required name="age">
+        </div>
+  
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" ngModel class="form-control" id="dob" required name="dob">
+        </div>
+  
+        <div class="form-group">
+            <label for="sum">Death – Sum Insured</label>
+            <input type="number" ngModel min="1" class="form-control" id="sum" required name="sum">
+        </div>
+  
+        <div class="form-group">
+          <label for="occupation">Occupation</label>
+          <select class="form-control" id="occupation" ngModel required name="occupation" (change)="onChange($event, premiumForm.value)">
+            <option value="" disabled selected>Select your occupation</option>
+            <option *ngFor="let occupation of occupations" [value]="occupation">{{occupation}}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Your Monthly Premium: <strong>{{ premium }} </strong></label>
+        </div>
+      </form>
+    </div>
+</div>
