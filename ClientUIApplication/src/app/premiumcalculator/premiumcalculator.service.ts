@@ -7,7 +7,7 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 
 export class PremiumService {
   
-  readonly apiUrl = 'https://localhost:5262';
+  readonly apiUrl = 'https://localhost:7262';
 
   constructor(private http: HttpClient) { }
 
